@@ -107,7 +107,9 @@ example.com {
 
 ## 构建与发布
 
-GitHub Actions 会在以下情况构建 `linux/amd64` 和 `linux/arm64` 镜像：
+GitHub Actions 会分别使用 GitHub 托管的 x64 和 ARM64 Runner 原生构建 `linux/amd64`、`linux/arm64` 镜像，然后合并多架构 manifest。整个流程不使用 QEMU 模拟。
+
+工作流会在以下情况运行：
 
 - 推送到 `main`：发布 `latest` 和 `sha-<commit>`
 - 推送 `v*` 标签：发布同名版本标签和 `sha-<commit>`
@@ -127,4 +129,3 @@ docker run --rm useful-caddy:local caddy list-modules --versions
 ## License
 
 [MIT](./LICENSE)
-
