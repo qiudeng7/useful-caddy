@@ -1,6 +1,6 @@
 # useful-caddy
 
-一个面向自用和国内服务器部署场景的 Caddy 成品镜像。构建工作交给 GitHub Actions，使用时无需再通过代理运行 `xcaddy` 或从 GitHub 拉取插件源码。
+在国内网络环境中，自行构建带插件的 Caddy 往往比较麻烦：不仅拉取 Caddy 基础镜像需要代理，Dockerfile 构建阶段运行的 `xcaddy` 也需要访问 GitHub 和 Go 模块源。与其在每台服务器上为整条构建链路配置代理，本项目直接通过 GitHub Actions 构建包含我常用功能的多架构成品镜像；部署时只需为 GHCR 镜像拉取配置加速代理，然后使用 `ghcr.io/qiudeng7/useful-caddy` 即可。
 
 镜像内置：
 
