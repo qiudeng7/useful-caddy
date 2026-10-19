@@ -2,8 +2,7 @@
 
 ARG CADDY_VERSION=2.11.7
 
-FROM gh-proxy.org/docker/caddy:${CADDY_VERSION}-builder AS builder
-ENV GOPROXY=https://goproxy.cn,direct
+FROM caddy:${CADDY_VERSION}-builder AS builder
 
 ARG CLOUDFLARE_VERSION=v0.2.4
 ARG TENCENTCLOUD_VERSION=v0.4.3
@@ -21,7 +20,7 @@ RUN xcaddy build \
     && caddy list-modules | grep -Fxq 'layer4.handlers.proxy' \
     && caddy list-modules | grep -Fxq 'dns.providers.esa'
 
-FROM gh-proxy.org/docker/caddy:${CADDY_VERSION}-alpine
+FROM caddy:${CADDY_VERSION}-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
