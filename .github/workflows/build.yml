@@ -56,7 +56,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           labels: |
             org.opencontainers.image.title=useful-caddy
-            org.opencontainers.image.description=Caddy with AliDNS, Cloudflare, Tencent Cloud DNS and Layer 4 modules
+            org.opencontainers.image.description=Caddy with AliDNS/ESA, Cloudflare, Tencent Cloud DNS and Layer 4 modules
 
       - name: Build platform image
         id: build
@@ -122,7 +122,7 @@ jobs:
             type=sha,prefix=sha-
           labels: |
             org.opencontainers.image.title=useful-caddy
-            org.opencontainers.image.description=Caddy with AliDNS, Cloudflare, Tencent Cloud DNS and Layer 4 modules
+            org.opencontainers.image.description=Caddy with AliDNS/ESA, Cloudflare, Tencent Cloud DNS and Layer 4 modules
 
       - name: Create multi-platform manifest
         working-directory: ${{ runner.temp }}/digests

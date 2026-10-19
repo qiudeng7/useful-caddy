@@ -4,7 +4,7 @@
 
 镜像内置：
 
-- [AliDNS](https://github.com/caddy-dns/alidns)
+- [AliDNS / ESA](https://github.com/nuln/caddy-plugins/alidns)：阿里云云解析，以及 ESA 边缘安全加速的 DNS-01
 - [Cloudflare DNS](https://github.com/caddy-dns/cloudflare)
 - [腾讯云 DNSPod](https://github.com/caddy-dns/tencentcloud)
 - [caddy-l4](https://github.com/mholt/caddy-l4)，提供 TCP/UDP 四层代理能力
